@@ -1,0 +1,12 @@
+# Ignore deploy config files
+.*.yaml
+yaml
+Dockerfile
+
+# Ignore git files
+.git*
+
+# Ignore project files
+.editorconfig
+README.md
+Makefile
