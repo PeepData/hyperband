@@ -1,7 +1,9 @@
 # Hyperband
 ![python_version](https://img.shields.io/badge/python-3.8-blue)
 
-Breve ejemplo acerca Hyperband utilizando [Xgboost](https://xgboost.readthedocs.io/en/latest/). La versión original de la implementación de la clase [Hyperband](https://arxiv.org/abs/1603.06560) se encuentra en este [repositorio](https://github.com/zygmuntz/hyperband). 
+Breve ejemplo acerca Hyperband utilizando [Xgboost](https://xgboost.readthedocs.io/en/latest/). La versión original de la implementación de la clase [Hyperband](https://arxiv.org/abs/1603.06560) se encuentra en este [repositorio](https://github.com/zygmuntz/hyperband).
+
+El template del proyecto está disponible en el siguiente [LINK](https://github.com/PeepData/cookiecutter_python_cli).
 
 ## Installation
 
