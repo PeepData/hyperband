@@ -1,36 +1,39 @@
-# hyperband
+# Hyperband
 ![python_version](https://img.shields.io/badge/python-3.8-blue)
 
-Breve descripción acerca del proyecto.
+Breve ejemplo acerca Hyperband utilizando [Xgboost](https://xgboost.readthedocs.io/en/latest/). La versión original de la implementación de la clase [Hyperband](https://arxiv.org/abs/1603.06560) se encuentra en este [repositorio](https://github.com/zygmuntz/hyperband). 
 
 ## Installation
-Listar las dependencias y requerimentos para poder utilizar el cli.
 
-1-Instalar las dependencias.
+### Utilizando el requirements.txt
+
+Instalar las dependencias:
 
 ```sh
 pip3 install -r requirements.txt
 pip3 install -e .
 ```
 
-2-Configurar las variables de entorno.
+Utilizar pip en el caso de utilizar Windows.
 
+
+### Utilizando Docker
+
+Para facilitar el uso, hay disponible un Makefile. Para utilizar ejecutar los siguientes comandos para iniciar el ambiente:
+
+
+Para buildear contenedor:
 ```sh
-MYSQL_USER=<user>
-MYSQL_PASSWORD=<password>
-MYSQL_HOST=<host>
-MYSQL_PORT=<port>
-MYSQL_DATABASE=<PYTHON_BI_{env}>
+make build
 ```
-Para mis información sobre estas credenciales ingresar a este [wiki](https://agea.atlassian.net/wiki/spaces/BIGAA/pages/252707452/Herramientas).
 
 
 ## Usage
 
-Indicar como debe ejecutarse. Por ejemplo el proyecto debe ser utilizado con el siguiente comando:
+El proyecto puede correrse simplemente utilizando el siguiente comando:
 
 ```sh
-hyperband run <arg1> <arg2>
+hyperband run
 ```
 
 Para más información:
@@ -39,32 +42,28 @@ Para más información:
 hyperband --help
 ```
 
+Tambíen se puede ejecutar utilizando Docker. Una vez construida la imagen ejecutar los siguientes comando:
 
-## Running test
-Para correr los tests existen dos opciones disponibles:
-
-#### Tox
-Por defecto `tox` tiene varios virtualenv disponibles para ejecutar. Para sólo ejecutar los tests se debe correr el siguiente comando:
+Para correr el contenedor:
 
 ```sh
-tox -e test
+make run
 ```
 
-#### Pytest
-Se puede usar pytest directamente, se deben instalar las dependencias necesarias en el caso de que no lo estén y luego ejecutar el siguiente comando:
+Para correr el proyecto:
 
 ```sh
-pytest
+make start
 ```
 
 
-## Extra
-Agregar más información sobre el proyecto en general. Por ejemplo la estructura de la data que se va a crear, el volumen de datos que puede mover, si tiene que tener permisos para llegar a una ip determinada, el motor de base de datos que se utilizará, etc.
+## Estructura del proyecto
 
+* **/__ main __.py**: root del proyecto. Se encuentra la ejecución del método principal.
+* **/service/hyperband.py**: implementación del algoritmo.
+* **/service/xgboost.py**: declaración del espacio de búsqueda e instanciación del modelo.
+* **/commons/helper.py**: funciones auxiliares para carga y transformación de datos, y evaluación del modelo.
+* **/settings.py**: variables claves para el desarrollo de la hiperparametrización. En el caso de querer correr el proyecto con otros valores, modificar este archivo.
 
-## Schedule
-Indicar cada cuanto deberá ejecutarse el proyecto.
-
-| Comando                           | ¿Cómo y cuando?            |
-| --------------------------------- | -------------------------- |
-| hyperband run | Cada 8 HS                  |
+## Contacto
+Cualquier comentario o dudas contactame a thepeepdata@gmail.com.
